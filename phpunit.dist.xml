@@ -39,8 +39,8 @@
         </deprecationTrigger>
 
         <exclude>
-            <directory>src/Entity</directory>
-            <directory>src/Repository</directory>
+            <directory>src/ApiResource</directory>
+            <directory>src/Dto</directory>
             <file>src/DataFixtures/AppFixtures.php</file>
             <file>src/EventListener/ExceptionListener.php</file>
         </exclude>

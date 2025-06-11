@@ -9,11 +9,12 @@ use App\Service\TransferService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Attribute\Route;
 
-final class ApiController extends AbstractController
+class ApiController extends AbstractController
 {
     public function __construct(
         private AccountRepository $accountRepository, 
@@ -96,6 +97,6 @@ final class ApiController extends AbstractController
             throw new BadRequestHttpException($e->getMessage());
         }
 
-        return $this->json(['message' => 'Transfer successful!']);
+        return $this->json(['message' => 'Transfer successful!'], Response::HTTP_CREATED);
     }
 }

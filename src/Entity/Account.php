@@ -114,14 +114,4 @@ class Account
     {
         return $this->transactions;
     }
-
-    public function addTransaction(Transaction $transaction): static
-    {
-        if (!$this->transactions->contains($transaction)) {
-            $this->transactions->add($transaction);
-            $transaction->setFromAccount($this);
-        }
-
-        return $this;
-    }
 }

@@ -188,7 +188,7 @@ class ApiControllerTest extends WebTestCase
             json_encode($postData)
         );
 
-        $this->assertResponseStatusCodeSame(Response::HTTP_OK);
+        $this->assertResponseStatusCodeSame(Response::HTTP_CREATED);
         $responseData = json_decode($this->client->getResponse()->getContent(), true);
         $this->assertEquals('Transfer successful!', $responseData['message']);
     }

@@ -81,14 +81,4 @@ class Client
     {
         return $this->accounts;
     }
-
-    public function addAccount(Account $account): static
-    {
-        if (!$this->accounts->contains($account)) {
-            $this->accounts->add($account);
-            $account->setClient($this);
-        }
-
-        return $this;
-    }
 }
